@@ -60,9 +60,9 @@ do
   esac
 done
 
-LOCALTIME=`/bin/date +%s`
 REMOTETIME=`check_nrpe -H $hostaddress -c get_time 2>&1`
 RESULT=$?
+LOCALTIME=`/bin/date +%s`
 
 if [ $RESULT -gt 0 ]; then
 	echo "Unknown - Could not execute check_nrpe"
